@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BANQUE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- TOP MENU -->
+    <div class="top-menu">
+        <a>PARTICULIERS</a> | 
+        <a>PROFESSIONNELS</a> | 
+        <a>AGRICULTEURS & PÊCHEURS</a> | 
+        <a>ENTREPRISES</a>
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="navbar">
+        <div class="logo-zone">
+            <div class="logo-icon">🏦</div>
+            <h1>BANQUE</h1>
+        </div>
+        <div class="nav-links">
+            <a href="#home">🏠 Accueil</a>
+            <a href="#operations">💼 Opérations</a>
+            <a href="#param">⚙️ Paramètres</a>
+        </div>
+    </div>
+
+    <!-- CARTES -->
+    <div class="section-cards">
+        <div class="card card-yellow" onclick="goTo('operations')">
+            <h3>Espace<br><b>PROFESSIONNELS</b></h3>
+        </div>
+        <div class="card card-blue" onclick="goTo('operations')">
+            <h3>Espace<br><b>AGRICULTEURS</b></h3>
+        </div>
+        <div class="card card-grey" onclick="goTo('operations')">
+            <h3>Espace<br><b>ENTREPRISES</b></h3>
+        </div>
+    </div>
+
+    <!-- PAGE INTERETS -->
+    <div class="container" id="operations">
+        <h2>💰 Calcul Intérêts Simples</h2>
+
+        <label>Choisir une opération :</label>
+        <select id="operation">
+            <option value="epargne">🏦 Épargne</option>
+            <option value="courant">💳 Compte courant</option>
+            <option value="escompte">📄 Bordereau d'escompte</option>
+        </select>
+
+        <label>Type d’intérêts :</label>
+        <select id="typeInteret">
+            <option value="post">Intérêts simples postcomptés</option>
+            <option value="pre">Intérêts simples précomptés</option>
+        </select>
+
+        <label>Capital :</label>
+        <input type="number" id="capital" placeholder="Ex : 10000" />
+
+        <label>Taux (%) :</label>
+        <input type="number" id="taux" placeholder="Ex : 5" />
+
+        <label>Durée (jours) :</label>
+        <input type="number" id="duree" placeholder="Ex : 90" />
+
+        <button onclick="calculer()">🔎 Calculer</button>
+
+        <!-- RESULTATS FINANCIERS AVANCÉS -->
+        <div id="result" class="result"></div>
+
+        <div class="result">
+            Solde actuel : <span id="solde">0</span> DT
+        </div>
+
+        <h3>🗓️ Activité du mois</h3>
+        <div class="activity-box">
+            <ul id="activity"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
